@@ -1,22 +1,101 @@
-# DIO - Trilha .NET - Programação orientada a objetos
-www.dio.me
+# Desafio de Projeto: Sistema de Celulares
 
-## Desafio de projeto
-Para este desafio, você precisará usar seus conhecimentos adquiridos no módulo de orientação a objetos, da trilha .NET da DIO.
+Este repositório contém a implementação do desafio de projeto proposto pela DIO (Digital Innovation One) na trilha .NET, no módulo de **Programação Orientada a Objetos**. O objetivo do projeto é criar uma abstração de um sistema que trabalha com celulares, usando conceitos de orientação a objetos.
 
-## Contexto
-Você é responsável por modelar um sistema que trabalha com celulares. Para isso, foi solicitado que você faça uma abstração de um celular e disponibilize maneiras de diferentes marcas e modelos terem seu próprio comportamento, possibilitando um maior reuso de código e usando a orientação a objetos.
+📱 **Contexto**
 
-## Proposta
-Você precisa criar um sistema em .NET, do tipo console, mapeando uma classe abstrata e classes específicas para dois tipos de celulares: Nokia e iPhone. 
-Você deve criar as suas classes de acordo com o diagrama abaixo:
+Você foi contratado para modelar um sistema que gerencia celulares de diferentes marcas. O sistema utiliza uma classe abstrata para representar um celular genérico e classes específicas para marcas como Nokia e iPhone, onde cada marca tem seu próprio comportamento.
 
-![Diagrama classes](Imagens/diagrama.png)
+O desafio consiste em implementar a abstração de um celular e permitir que as classes filhas (Nokia e iPhone) sobrescrevam o comportamento de instalação de aplicativos de maneira distinta.
 
-## Regras e validações
-1. A classe **Smartphone** deve ser abstrata, não permitindo instanciar e servindo apenas como modelo.
-2. A classe **Nokia** e **Iphone** devem ser classes filhas de Smartphone.
-3. O método **InstalarAplicativo** deve ser sobrescrito na classe Nokia e iPhone, pois ambos possuem diferentes maneiras de instalar um aplicativo.
+### **Diagrama de Classes**
 
-## Solução
-O código está pela metade, e você deverá dar continuidade obedecendo as regras descritas acima, para que no final, tenhamos um programa funcional. Procure pela palavra comentada "TODO" no código, em seguida, implemente conforme as regras acima.
+```plaintext
+                +------------------------+
+                |      Smartphone        |
+                |------------------------|
+                | - Modelo: string       |
+                | - Marca: string        |
+                |------------------------|
+                | + Ligar()              |
+                | + Desligar()           |
+                | + InstalarAplicativo() |
+                +------------------------+
+                    ^               ^
+                   /                 \
++------------------------+       +-------------------------+
+|         Nokia          |       |         Iphone          |
+|------------------------|       |-------------------------|
+| + InstalarAplicativo() |       |  + InstalarAplicativo() |
++------------------------+       +-------------------------+
+```
+
+## ✨ Proposta
+
+Você precisa criar um sistema em .NET, do tipo console, mapeando uma classe abstrata e classes específicas para os celulares Nokia e iPhone.
+
+### **Regras e validações**
+
+- A classe `Smartphone` deve ser abstrata, não podendo ser instanciada, servindo apenas como modelo para outras classes.
+
+- As classes `Nokia` e `Iphone` devem herdar de `Smartphone` e implementar o método `InstalarAplicativo()` de maneira distinta para cada tipo de celular.
+
+- O método `InstalarAplicativo()` deve ser sobrescrito nas classes `Nokia` e `Iphone`, pois cada marca tem sua própria forma de instalar aplicativos.
+
+🔧 **Solução**
+
+O código está parcialmente implementado, e você deve continuar a implementação, seguindo as regras descritas acima. Procure pela palavra comentada `TODO` no código e implemente as funcionalidades conforme solicitado.
+
+## ✅ Requisitos
+
+- A classe `Smartphone` será a classe base abstrata.
+
+- As classes `Nokia` e `Iphone` devem herdar de `Smartphone` e implementar o método `InstalarAplicativo()` de forma personalizada.
+
+- O código do programa está parcialmente implementado, e você precisará completar as funcionalidades para que o sistema funcione corretamente.
+
+## 💻 Tecnologias Utilizadas
+
+- Linguagem: C#
+- Framework: .NET
+
+## 🚀 Como Executar
+
+1. **Clone o repositório:**
+
+```bash
+ git clone https://github.com/Paola-Tomaz/ProjetoSistemaCelularDIO.git
+```
+
+2. **Navegue até o diretório do projeto:**
+
+
+```bash
+ cd ProjetoSistemaCelularDIO
+```
+
+3. **Compile e execute o projeto:**
+
+```bash
+ dotnet run
+``` 
+
+## 📂 Estrutura do Projeto
+
+```plaintext
+📁 ProjetoSistemaCelularDIO
+├── 📂 Models
+│   ├── Smartphone.cs
+│   ├── Nokia.cs
+│   └── Iphone.cs
+├── Program.cs
+├── DesafioPOO.csproj
+```
+
+## 🤝 Contribuições
+
+Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou enviar pull requests.
+
+---
+
+Desenvolvido por [Paola](https://github.com/Paola-Tomaz) durante a trilha .NET da DIO.
